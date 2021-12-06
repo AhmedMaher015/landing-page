@@ -1,21 +1,27 @@
-# Project Name
-
-Landing Page Project
+# Landing Page Project
 
 ---
 
-# Project Description
+## Project Description
 
 this is a landing page.
 
-you can scroll to sections and click on targeted section link in navbar
+page contains several sections and navbar created dynamically
 
 ---
 
-# technologies used
+## technologies used
 
 - HTML
 - CSS
 - JAVASCRIPT
 
 ---
+
+## How to run page?
+
+you can scroll to sections and click on targeted section link in navbar
+
+---
+
+## Author: @Ahmed Maher
