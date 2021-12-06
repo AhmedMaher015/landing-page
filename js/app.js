@@ -24,15 +24,7 @@
  */
 const navbarList = document.getElementById("navbar__list");
 
-const sections = [
-  document.getElementById("section1"),
-
-  document.getElementById("section2"),
-
-  document.getElementById("section3"),
-
-  document.getElementById("section4"),
-];
+const sections = [...document.querySelectorAll("section")];
 
 /**
  * End Global Variables
@@ -54,7 +46,7 @@ const createMenu = () => {
     const sectionName = section.dataset.nav;
     const sectionId = section.id;
     li.innerHTML = `
-        <a class="menu__link"  data-target="${sectionId}">${sectionName}</a>
+        <a class="menu__link" href="#${sectionId}" data-target="${sectionId}">${sectionName}</a>
         `;
     navbarList.appendChild(li);
   });
@@ -64,11 +56,12 @@ const createMenu = () => {
 
 const addActive = () => {
   sections.forEach((section) => {
+    // get section top of view
+    const top = section.getBoundingClientRect().top;
     if (
-      // get section top of view
-      section.getBoundingClientRect().top >= 0 &&
+      top >= -200 &&
+      top <= 200
       // check is section contains your-active-class class
-      !section.classList.contains("your-active-class")
     ) {
       section.classList.add("your-active-class");
     } else {
@@ -81,7 +74,7 @@ const addActive = () => {
 const scrollToByLink = (id) => {
   // find section by id in sections array
   const section = sections.find((section) => section.id === id);
-  window.scrollTo(0, section.offsetTop);
+  section.scrollIntoView({ behavior: "smooth" });
 };
 
 /**
@@ -108,6 +101,7 @@ const removeActiveFromLinks = () => {
 navLinks.forEach((link) => {
   // add Event for every navLink
   link.addEventListener("click", (e) => {
+    e.preventDefault();
     // remove active class from navLinks
     removeActiveFromLinks();
     // add active class to navlink clicked
@@ -118,4 +112,4 @@ navLinks.forEach((link) => {
 });
 
 // Set sections as active
-window.addEventListener("scroll", addActive);
+window.onscroll = addActive;

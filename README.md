@@ -1,28 +1,21 @@
-# Landing Page Project
+# Project Name
+
+Landing Page Project
 
 ---
 
-## NavBar
+# Project Description
 
-- Section 1
-- Section 2
-- Section 3
-- Section 4
+this is a landing page.
 
-contains the links when you click the link it is going to scroll to the section you target
+you can scroll to sections and click on targeted section link in navbar
 
-## section1
+---
 
-contains the content of section 1
+# technologies used
 
-## section2
+- HTML
+- CSS
+- JAVASCRIPT
 
-contains the content of section 2
-
-## section3
-
-contains the content of section 3
-
-## section4
-
-contains the content of section 4
+---
